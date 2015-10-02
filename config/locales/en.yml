@@ -1,23 +1,20 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  company_attributes: ¿Qué es lo que más valoras de tu empresa?
+  action_taken: ¿Qué has hecho para mejorar las condiciones de tu trabajo?
+  action_taken_sub: Cuéntanos una acción que realizaste
+  work_attributes: ¿Qué tanto cumple %{company} con estas características?
+  work_attribute_selected: Ahora... ¿Qué aspecto te comprometes a mejorar?
+  commitment: En concreto... ¿A qué acción te comprometes contigo para mejorar ese aspecto?
+  submit: Yo me comprometo
+  welcome: Bienvenido
+  activerecord:
+    attributes:
+      answer:
+        username: Nombre completo
+        action_taken: ¿Qué hiciste?
+        action_date: ¿Cuando?
+        action_place: ¿Donde?
+        action_result: ¿Cuál fue el resultado?
+        commitment_action: Acción
+        commitment_date: Fecha límite para realizarla
+        commitment_time: Hora límite para realizarla
