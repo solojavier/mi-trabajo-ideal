@@ -1,0 +1,117 @@
+<%= form_for(@answer) do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+      <% @answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :company_attribute_1 %><br>
+    <%= f.text_field :company_attribute_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :company_attribute_2 %><br>
+    <%= f.text_field :company_attribute_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :company_attribute_3 %><br>
+    <%= f.text_field :company_attribute_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :company_attribute_4 %><br>
+    <%= f.text_field :company_attribute_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :company_attribute_5 %><br>
+    <%= f.text_field :company_attribute_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :action_taken %><br>
+    <%= f.text_field :action_taken %>
+  </div>
+  <div class="field">
+    <%= f.label :action_date %><br>
+    <%= f.date_select :action_date %>
+  </div>
+  <div class="field">
+    <%= f.label :action_place %><br>
+    <%= f.text_field :action_place %>
+  </div>
+  <div class="field">
+    <%= f.label :action_result %><br>
+    <%= f.text_field :action_result %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_1 %><br>
+    <%= f.text_field :work_attribute_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_2 %><br>
+    <%= f.text_field :work_attribute_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_3 %><br>
+    <%= f.text_field :work_attribute_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_4 %><br>
+    <%= f.text_field :work_attribute_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_5 %><br>
+    <%= f.text_field :work_attribute_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_value_1 %><br>
+    <%= f.number_field :work_attribute_value_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_value_2 %><br>
+    <%= f.number_field :work_attribute_value_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_value_3 %><br>
+    <%= f.number_field :work_attribute_value_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_value_4 %><br>
+    <%= f.number_field :work_attribute_value_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_value_5 %><br>
+    <%= f.number_field :work_attribute_value_5 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_attribute_selected_index %><br>
+    <%= f.number_field :work_attribute_selected_index %>
+  </div>
+  <div class="field">
+    <%= f.label :commitment_action %><br>
+    <%= f.text_field :commitment_action %>
+  </div>
+  <div class="field">
+    <%= f.label :commitment_date %><br>
+    <%= f.date_select :commitment_date %>
+  </div>
+  <div class="field">
+    <%= f.label :commitment_time %><br>
+    <%= f.time_select :commitment_time %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= f.text_field :company %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
