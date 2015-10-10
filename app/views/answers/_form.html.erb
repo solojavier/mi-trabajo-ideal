@@ -20,116 +20,153 @@
 
   <%= f.hidden_field :company %>
 
-  <div class="panel panel-primary">
+  <div id="welcome" class="panel panel-primary">
     <div class="panel-heading"><%= t('welcome') %></div>
     <div class="panel-body">
-      <div class="from-group">
+      <div id="username-group" class="from-group">
         <%= f.label :username %>
-        <%= f.text_field :username, class: 'form-control'%>
+        <%= f.text_field :username, class: 'form-control' %>
+      </div>
+      <div class="from-group">
+        <%= button_tag 'Entrar', id: 'welcome-next', class: 'form-control' %>
       </div>
     </div>
-    <div class="panel-footer"></div>
   </div>
 
-  <div class="panel panel-primary">
+  <div id="company" class="panel panel-primary">
     <div class="panel-heading"><%= t('company_attributes') %></div>
     <div class="panel-body">
-      <div class="form-group">
+      <div class="form-group company-attribute">
         <%= f.text_field :company_attribute_1, class: 'form-control' %>
       </div>
-      <div class="form-group">
+      <div class="form-group company-attribute">
         <%= f.text_field :company_attribute_2, class: 'form-control' %>
       </div>
-      <div class="form-group">
+      <div class="form-group company-attribute">
         <%= f.text_field :company_attribute_3, class: 'form-control' %>
       </div>
-      <div class="form-group">
+      <div class="form-group company-attribute">
         <%= f.text_field :company_attribute_4, class: 'form-control' %>
       </div>
-      <div class="form-group">
+      <div class="form-group company-attribute">
         <%= f.text_field :company_attribute_5, class: 'form-control' %>
       </div>
+      <div class="from-group">
+        <%= button_tag 'Siguiente', id: 'company-next', class: 'form-control' %>
+      </div>
     </div>
-    <div class="panel-footer"></div>
   </div>
 
-  <div class="panel panel-primary">
+  <div id="action" class="panel panel-primary">
     <div class="panel-heading"><%= t('action_taken') %></div>
     <div class="panel-body">
       <h4><%= t('action_taken_sub') %></h4>
-      <div class="form-group">
+      <div class="form-group action-attribute">
         <%= f.label :action_taken %><br>
         <%= f.text_field :action_taken, class: 'form-control'%>
       </div>
-      <div class="form-group">
+      <div class="form-group action-attribute">
         <%= f.label :action_date %><br>
-        <%= f.date_select :action_date %>
+        <%= f.date_field :action_date, value: Date.today %>
       </div>
-      <div class="form-group">
+      <div class="form-group action-attribute">
         <%= f.label :action_place %><br>
         <%= f.text_field :action_place, class: 'form-control' %>
       </div>
-      <div class="form-group">
+      <div class="form-group action-attribute">
         <%= f.label :action_result %><br>
         <%= f.text_field :action_result, class: 'form-control' %>
       </div>
+      <div class="from-group">
+        <%= button_tag 'Siguiente', id: 'action-next', class: 'form-control' %>
+      </div>
     </div>
   </div>
 
-  <div class="panel panel-primary">
+  <div id="work-ideal" class="panel panel-primary">
+    <div class="panel-heading"><%= t('work_ideal') %></div>
+    <div class="panel-body">
+      <div class="form-group work-ideal-attribute">
+        <%= f.text_field :work_attribute_1, class: 'form-control' %>
+      </div>
+      <div class="form-group work-ideal-attribute">
+        <%= f.text_field :work_attribute_2, class: 'form-control' %>
+      </div>
+      <div class="form-group work-ideal-attribute">
+        <%= f.text_field :work_attribute_3, class: 'form-control' %>
+      </div>
+      <div class="form-group work-ideal-attribute">
+        <%= f.text_field :work_attribute_4, class: 'form-control' %>
+      </div>
+      <div class="form-group work-ideal-attribute">
+        <%= f.text_field :work_attribute_5, class: 'form-control' %>
+      </div>
+      <div class="from-group">
+        <%= button_tag 'Siguiente', id: 'work-ideal-next', class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div id="work" class="panel panel-primary">
     <div class="panel-heading"><%= t('work_attributes', company: @answer.company.capitalize) %></div>
     <div class="panel-body">
-      <div class="form-inline">
-        <%= f.select :work_attribute_1, [], {}, class: 'form-control' %>
+      <div class="form-inline work-attribute">
+        <%= label_tag '' %>
         <%= f.number_field :work_attribute_value_1, class: 'form-control', in: 0..10 %>
       </div>
-      <div class="form-inline">
-        <%= f.select :work_attribute_2, [], {}, class: 'form-control' %>
+      <div class="form-inline work-attribute">
+        <%= label_tag '' %>
         <%= f.number_field :work_attribute_value_2, class: 'form-control', in: 0..10 %>
       </div>
-      <div class="form-inline">
-        <%= f.select :work_attribute_3, [], {}, class: 'form-control' %>
+      <div class="form-inline work-attribute">
+        <%= label_tag '' %>
         <%= f.number_field :work_attribute_value_3, class: 'form-control', in: 0..10 %>
       </div>
-      <div class="form-inline">
-        <%= f.select :work_attribute_4, [], {}, class: 'form-control' %>
+      <div class="form-inline work-attribute">
+        <%= label_tag '' %>
         <%= f.number_field :work_attribute_value_4, class: 'form-control', in: 0..10 %>
       </div>
-      <div class="form-inline">
-        <%= f.select :work_attribute_5, [], {}, class: 'form-control' %>
+      <div class="form-inline work-attribute">
+        <%= label_tag '' %>
         <%= f.number_field :work_attribute_value_5, class: 'form-control', in: 0..10 %>
+      </div>
+      <div class="from-group">
+        <%= button_tag 'Siguiente', id: 'work-next', class: 'form-control' %>
       </div>
     </div>
   </div>
 
-  <div class="panel panel-primary">
+  <div id="work-select" class="panel panel-primary">
     <div class="panel-heading"><%= t('work_attribute_selected') %></div>
     <div class="panel-body">
       <div class="form-group">
         <%= f.select :work_attribute_selected_index, [], {}, class: 'form-control' %>
       </div>
+      <div class="from-group">
+        <%= button_tag 'Siguiente', id: 'work-select-next', class: 'form-control' %>
+      </div>
     </div>
   </div>
 
-  <div class="panel panel-primary">
+  <div id="commitment" class="panel panel-primary">
     <div class="panel-heading"><%= t('commitment') %></div>
     <div class="panel-body">
-      <div class="form-group">
+      <div class="form-group commitment-attribute">
         <%= f.label :commitment_action %><br>
         <%= f.text_field :commitment_action, class: 'form-control' %>
       </div>
-      <div class="form-group">
+      <div class="form-group commitment-attribute">
         <%= f.label :commitment_date %><br>
-        <%= f.date_select :commitment_date %>
+        <%= f.date_field :commitment_date, value: Date.tomorrow %>
       </div>
-      <div class="form-group">
+      <div class="form-group commitment-attribute">
         <%= f.label :commitment_time %><br>
         <%= f.time_select :commitment_time %>
       </div>
       <div class="form-group">
       </div>
       <div class="actions">
-        <%= f.submit t('submit') %>
+        <%= f.submit t('submit'), id: 'submit' %>
       </div>
     </div>
   </div>

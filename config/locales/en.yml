@@ -2,6 +2,7 @@ en:
   company_attributes: ¿Qué es lo que más valoras de tu empresa?
   action_taken: ¿Qué has hecho para mejorar las condiciones de tu trabajo?
   action_taken_sub: Cuéntanos una acción que realizaste
+  work_ideal: Las 5 características de mi trabajo ideal
   work_attributes: ¿Qué tanto cumple %{company} con estas características?
   work_attribute_selected: Ahora... ¿Qué aspecto te comprometes a mejorar?
   commitment: En concreto... ¿A qué acción te comprometes contigo para mejorar ese aspecto?
