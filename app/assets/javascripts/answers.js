@@ -22,13 +22,20 @@ var setWorkAttributes = function() {
 var setWorkSelect = function() {
   $( '.work-ideal-attribute' ).each(function(index) {
     var text = $( this ).children('input').val();
-    $('#answer_work_attribute_selected_index').append($('<option>', {
-      value: index+1, text: text
+    $('#work_attribute_selected_index').append($('<label>', { text: text }));
+    $('#work_attribute_selected_index').append($('<input>', {
+      id: text, checked: true, type: 'radio', value: index+1,
+      name: "answer[work_attribute_selected_index]"
     }));
   });
 };
 
-$( document  ).ready(function() {
+var setWorkTitle = function() {
+  var text = $("#work_attribute_selected_index").children("input:checked").attr('id');
+  $("#commitment").html($('#commitment').html().replace('ATTRIBUTE', text));
+};
+
+$( document ).ready(function() {
   $( '#values' ).hide();
   $( '#company' ).hide();
   $( '#action' ).hide();
@@ -98,10 +105,11 @@ $( document  ).ready(function() {
 
   $( '#work-select-next' ).click(function( event ) {
     event.preventDefault();
-    var text = $("#answer_work_attribute_selected_index :selected").text();
-    $("#commitment").html($('#commitment').html().replace('ATTRIBUTE', text));
-    $( '#work-select' ).hide();
-    $( '#commitment' ).show();
+    if ( validAttributes( $( '.work-attribute' ) ) ) {
+      //setWorkTitle();
+      $( '#work-select' ).hide();
+      $( '#commitment' ).show();
+    }
   });
 
   $( '#commitment-next' ).click(function( event ) {

@@ -37,8 +37,11 @@
   <div id="values" class="panel panel-primary">
     <div class="panel-heading"><%= t('values') %></div>
     <div class="panel-body">
-      <div class="form-group values-attribute">
-        <%= f.select :values, t('values_array'), {include_blank: true}, class: 'form-control' %>
+      <div class="checkbox values-attribute">
+        <% t('values_array').each do |value| %>
+          <%= f.label value %>
+          <%= f.radio_button :values, value, checked: true %>
+        <% end %>
       </div>
       <div class="from-group values-attribute">
         <%= f.label :values_description %>
@@ -150,8 +153,7 @@
   <div id="work-select" class="panel panel-primary">
     <div class="panel-heading"><%= t('work_attribute_selected') %></div>
     <div class="panel-body">
-      <div class="form-group">
-        <%= f.select :work_attribute_selected_index, [], {}, class: 'form-control' %>
+      <div class="checkbox work-select-attribute" id="work_attribute_selected_index">
       </div>
       <div class="from-group">
         <%= button_tag 'Siguiente', id: 'work-select-next', class: 'form-control' %>
@@ -178,7 +180,7 @@
   </div>
 
   <div id="feeling" class="panel panel-primary">
-    <div class="panel-heading"><%= t('commitment', attribute: 'ATTRIBUTE') %></div>
+    <div class="panel-heading"></div>
     <div class="panel-body">
       <div class="form-group feeling-attribute">
         <%= f.label :current_feeling %><br>
