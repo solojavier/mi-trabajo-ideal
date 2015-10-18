@@ -21,8 +21,7 @@ var setWorkAttributes = function() {
 
 var setWorkSelect = function() {
   $( '.work-ideal-attribute' ).each(function(index) {
-    var text = $( this ).children('input').val() + ' - ' +
-      $('.work-attribute:nth-child('+(index+1)+')').children('input').val();
+    var text = $( this ).children('input').val();
     $('#answer_work_attribute_selected_index').append($('<option>', {
       value: index+1, text: text
     }));
@@ -88,7 +87,8 @@ $( document  ).ready(function() {
 
   $( '#work-select-next' ).click(function( event ) {
     event.preventDefault();
-
+    var text = $("#answer_work_attribute_selected_index :selected").text();
+    $("#commitment").html($('#commitment').html().replace('ATTRIBUTE', text));
     $( '#work-select' ).hide();
     $( '#commitment' ).show();
   });

@@ -60,22 +60,12 @@
   <div id="action" class="panel panel-primary">
     <div class="panel-heading"><%= t('action_taken') %></div>
     <div class="panel-body">
-      <h4><%= t('action_taken_sub') %></h4>
       <div class="form-group action-attribute">
-        <%= f.label :action_taken %><br>
         <%= f.text_field :action_taken, class: 'form-control'%>
       </div>
       <div class="form-group action-attribute">
-        <%= f.label :action_date %><br>
-        <%= f.date_field :action_date, value: Date.today %>
-      </div>
-      <div class="form-group action-attribute">
-        <%= f.label :action_place %><br>
-        <%= f.text_field :action_place, class: 'form-control' %>
-      </div>
-      <div class="form-group action-attribute">
         <%= f.label :action_result %><br>
-        <%= f.text_field :action_result, class: 'form-control' %>
+        <%= f.select :action_result, ['Si', 'No'], {}, class: 'form-control' %>
       </div>
       <div class="from-group">
         <%= button_tag 'Siguiente', id: 'action-next', class: 'form-control' %>
@@ -149,7 +139,7 @@
   </div>
 
   <div id="commitment" class="panel panel-primary">
-    <div class="panel-heading"><%= t('commitment') %></div>
+    <div class="panel-heading"><%= t('commitment', attribute: 'ATTRIBUTE') %></div>
     <div class="panel-body">
       <div class="form-group commitment-attribute">
         <%= f.label :commitment_action %><br>
@@ -158,12 +148,6 @@
       <div class="form-group commitment-attribute">
         <%= f.label :commitment_date %><br>
         <%= f.date_field :commitment_date, value: Date.tomorrow %>
-      </div>
-      <div class="form-group commitment-attribute">
-        <%= f.label :commitment_time %><br>
-        <%= f.time_select :commitment_time %>
-      </div>
-      <div class="form-group">
       </div>
       <div class="actions">
         <%= f.submit t('submit'), id: 'submit' %>

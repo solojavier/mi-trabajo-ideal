@@ -1,11 +1,11 @@
 en:
   company_attributes: ¿Qué es lo que más valoras de tu empresa?
-  action_taken: ¿Qué has hecho para mejorar las condiciones de tu trabajo?
+  action_taken: ¿Qué has hecho desde la última aplicación de la encuesta para hacer de Afosa tu trabajo Ideal?
   action_taken_sub: Cuéntanos una acción que realizaste
   work_ideal: Las 5 características de mi trabajo ideal
   work_attributes: ¿Qué tanto cumple %{company} con estas características?
-  work_attribute_selected: Ahora... ¿Qué aspecto te comprometes a mejorar?
-  commitment: En concreto... ¿A qué acción te comprometes contigo para mejorar ese aspecto?
+  work_attribute_selected: Ahora... Selecciona el aspecto que te comprometes a mejorar
+  commitment: "En concreto... ¿A qué acción te comprometes contigo para mejorar este aspecto: %{attribute} ?"
   submit: Yo me comprometo
   welcome: Bienvenido
   activerecord:
@@ -15,7 +15,7 @@ en:
         action_taken: ¿Qué hiciste?
         action_date: ¿Cuando?
         action_place: ¿Donde?
-        action_result: ¿Cuál fue el resultado?
+        action_result: ¿Te dio resultado?
         commitment_action: Acción
         commitment_date: Fecha límite para realizarla
         commitment_time: Hora límite para realizarla
