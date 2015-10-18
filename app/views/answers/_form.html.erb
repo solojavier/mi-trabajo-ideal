@@ -23,6 +23,7 @@
   <div id="welcome" class="panel panel-primary">
     <div class="panel-heading"><%= t('welcome') %></div>
     <div class="panel-body">
+      <%= image_tag("logotipo.png", class: 'logo') %>
       <div id="username-group" class="from-group">
         <%= f.label :username %>
         <%= f.text_field :username, class: 'form-control' %>
