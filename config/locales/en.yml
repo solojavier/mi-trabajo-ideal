@@ -6,7 +6,7 @@ en:
   work_attributes: ¿Qué tanto cumple %{company} con estas características?
   work_attribute_selected: Ahora... Selecciona el aspecto que te comprometes a mejorar
   commitment: "En concreto... ¿A qué acción te comprometes contigo para mejorar este aspecto: %{attribute} ?"
-  submit: Yo me comprometo
+  submit: Enviar
   welcome: Bienvenido
   values: ¿Con cuál de los 4 valores de Afosa te identificas más?
   values_array:
