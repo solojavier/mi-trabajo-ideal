@@ -10,9 +10,8 @@
       <th>Company attribute 4</th>
       <th>Company attribute 5</th>
       <th>Action taken</th>
-      <th>Action date</th>
-      <th>Action place</th>
       <th>Action result</th>
+      <th>Action missing</th>
       <th>Work attribute 1</th>
       <th>Work attribute 2</th>
       <th>Work attribute 3</th>
@@ -26,8 +25,11 @@
       <th>Work attribute selected index</th>
       <th>Commitment action</th>
       <th>Commitment date</th>
-      <th>Commitment time</th>
       <th>Company</th>
+      <th>Current Feeling</th>
+      <th>Responsible</th>
+      <th>Values</th>
+      <th>Values description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -42,9 +44,8 @@
         <td><%= answer.company_attribute_4 %></td>
         <td><%= answer.company_attribute_5 %></td>
         <td><%= answer.action_taken %></td>
-        <td><%= answer.action_date %></td>
-        <td><%= answer.action_place %></td>
         <td><%= answer.action_result %></td>
+        <td><%= answer.action_missing %></td>
         <td><%= answer.work_attribute_1 %></td>
         <td><%= answer.work_attribute_2 %></td>
         <td><%= answer.work_attribute_3 %></td>
@@ -58,8 +59,11 @@
         <td><%= answer.work_attribute_selected_index %></td>
         <td><%= answer.commitment_action %></td>
         <td><%= answer.commitment_date %></td>
-        <td><%= answer.commitment_time %></td>
         <td><%= answer.company %></td>
+        <td><%= answer.current_feeling %></td>
+        <td><%= answer.responsible %></td>
+        <td><%= answer.values %></td>
+        <td><%= answer.values_description %></td>
         <td><%= link_to 'Show', answer %></td>
         <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
         <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

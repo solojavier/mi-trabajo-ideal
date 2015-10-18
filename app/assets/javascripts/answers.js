@@ -29,12 +29,14 @@ var setWorkSelect = function() {
 };
 
 $( document  ).ready(function() {
+  $( '#values' ).hide();
   $( '#company' ).hide();
   $( '#action' ).hide();
   $( '#work-ideal' ).hide();
   $( '#work' ).hide();
   $( '#work-select' ).hide();
   $( '#commitment' ).hide();
+  $( '#feeling' ).hide();
 
   $( '#welcome-next' ).click(function( event ) {
     event.preventDefault();
@@ -43,6 +45,15 @@ $( document  ).ready(function() {
       $( '#username-group' ).addClass('has-error');
     } else {
       $( '#welcome' ).hide();
+      $( '#values' ).show();
+    }
+  });
+
+  $( '#values-next' ).click(function( event ) {
+    event.preventDefault();
+
+    if ( validAttributes( $( '.values-attribute' ) ) ) {
+      $( '#values' ).hide();
       $( '#company' ).show();
     }
   });
@@ -93,8 +104,17 @@ $( document  ).ready(function() {
     $( '#commitment' ).show();
   });
 
+  $( '#commitment-next' ).click(function( event ) {
+    event.preventDefault()
+
+    if ( validAttributes( $( '.commitment-attribute' ) ) ) {
+      $( '#commitment' ).hide();
+      $( '#feeling' ).show();
+    }
+  });
+
   $( '#submit' ).click(function( event ) {
-    if ( !validAttributes( $( '.commitment-attribute' ) ) ) {
+    if ( !validAttributes( $( '.feeling-attribute' ) ) ) {
       event.preventDefault();
     }
   });

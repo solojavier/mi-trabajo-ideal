@@ -8,14 +8,21 @@ en:
   commitment: "En concreto... ¿A qué acción te comprometes contigo para mejorar este aspecto: %{attribute} ?"
   submit: Yo me comprometo
   welcome: Bienvenido
+  values: ¿Con cuál de los 4 valores de Afosa te identificas más?
+  values_array:
+    - Honestidad
+    - Profesionalismo
+    - Respeto
+    - Confianza
   activerecord:
     attributes:
       answer:
         username: Nombre completo
         action_taken: ¿Qué hiciste?
-        action_date: ¿Cuando?
-        action_place: ¿Donde?
         action_result: ¿Te dio resultado?
+        action_missing: ¿Qué crees que hizo falta?
         commitment_action: Acción
         commitment_date: Fecha límite para realizarla
-        commitment_time: Hora límite para realizarla
+        values_description: ¿Por qué?
+        current_feeling: ¿Cómo te sientes en Afosa?
+        responsible: ¿Estas de acuerdo que tu eres responsable de crear tu trabajo ideal? 

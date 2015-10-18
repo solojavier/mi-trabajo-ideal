@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151002191854) do
+ActiveRecord::Schema.define(version: 20151018195732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 20151002191854) do
     t.string   "company_attribute_4"
     t.string   "company_attribute_5"
     t.string   "action_taken"
-    t.date     "action_date"
-    t.string   "action_place"
     t.string   "action_result"
     t.string   "work_attribute_1"
     t.string   "work_attribute_2"
@@ -40,10 +38,14 @@ ActiveRecord::Schema.define(version: 20151002191854) do
     t.integer  "work_attribute_selected_index"
     t.string   "commitment_action"
     t.date     "commitment_date"
-    t.time     "commitment_time"
     t.string   "company"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.text     "action_missing"
+    t.integer  "current_feeling"
+    t.integer  "responsible"
+    t.string   "values"
+    t.string   "values_description"
   end
 
 end
