@@ -44,6 +44,7 @@ $( document ).ready(function() {
   $( '#work-select' ).hide();
   $( '#commitment' ).hide();
   $( '#feeling' ).hide();
+  $( '#action_missing' ).hide();
 
   $( '#welcome-next' ).click(function( event ) {
     event.preventDefault();
@@ -124,6 +125,18 @@ $( document ).ready(function() {
   $( '#submit' ).click(function( event ) {
     if ( !validAttributes( $( '.feeling-attribute' ) ) ) {
       event.preventDefault();
+    }
+  });
+
+  $( '#answer_action_result' ).change(function() {
+    var result = $( this ).val();
+
+    if ( result == 'Si' ) {
+      $( '#action_missing' ).hide();
+      $( '#action_missing' ).removeClass('action-attribute');
+    } else {
+      $( '#action_missing' ).show();
+      $( '#action_missing' ).addClass('action-attribute');
     }
   });
 
