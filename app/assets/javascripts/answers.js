@@ -30,9 +30,11 @@ var setWorkSelect = function() {
   });
 };
 
-var setWorkTitle = function() {
-  var text = $("#work_attribute_selected_index").children("input:checked").attr('id');
-  $("#commitment").html($('#commitment').html().replace('ATTRIBUTE', text));
+var setCommitmentTitle = function() {
+  var text   = $("#work_attribute_selected_index").children("input:checked").attr('id');
+  var target = $("#commitment").children(".panel-heading");
+
+  target.html(target.html().replace('ATTRIBUTE', text));
 };
 
 $( document ).ready(function() {
@@ -107,7 +109,7 @@ $( document ).ready(function() {
   $( '#work-select-next' ).click(function( event ) {
     event.preventDefault();
     if ( validAttributes( $( '.work-attribute' ) ) ) {
-      //setWorkTitle();
+      setCommitmentTitle();
       $( '#work-select' ).hide();
       $( '#commitment' ).show();
     }
