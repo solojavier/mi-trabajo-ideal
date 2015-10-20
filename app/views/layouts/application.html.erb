@@ -10,6 +10,14 @@
 
   <div id="main-container" class="container">
 
+    <% if @answer %>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"><%= @answer.company.capitalize %> - Mi Trabajo Ideal</a>
+        </div>
+      </nav>
+    <% end %>
+
     <%= yield %>
 
   </div>

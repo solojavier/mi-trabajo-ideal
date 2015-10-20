@@ -11,10 +11,14 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
 
     if @answer.save
-      redirect_to index_url(company: @answer.company)
+      redirect_to @answer
     else
       render :new
     end
+  end
+
+  def show
+    @answer = Answer.find(params[:id])
   end
 
   private

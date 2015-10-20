@@ -9,6 +9,9 @@ en:
   submit: Enviar
   welcome: Bienvenido
   values: ¿Con cuál de los 4 valores de Afosa te identificas más?
+  thanks: Agradecemos tu tiempo y disposición para contestar esta encuesta
+  footer: Juntos hacemos de Afosa nuestro trabajo ideal
+  commitment_note: Te comprometiste contigo a
   values_array:
     - Honestidad
     - Profesionalismo
