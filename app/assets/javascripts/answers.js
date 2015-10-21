@@ -21,7 +21,8 @@ var setWorkAttributes = function() {
 
 var setWorkSelect = function() {
   $( '.work-ideal-attribute' ).each(function(index) {
-    var text = $( this ).children('input').val();
+    var text = $( this ).children('input').val() + ' - ' +
+      $( '.work-attribute' ).children('input').eq(index).attr('value');
     $('#work_attribute_selected_index').append($('<label>', { text: text }));
     $('#work_attribute_selected_index').append($('<input>', {
       id: text, checked: true, type: 'radio', value: index+1,
@@ -142,4 +143,6 @@ $( document ).ready(function() {
     }
   });
 
+  $('.work-attribute').children('input').slider();
+  $('.feeling-attribute').children('input').slider();
 });

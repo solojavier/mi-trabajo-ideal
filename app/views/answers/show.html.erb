@@ -8,9 +8,15 @@
   <ul>
     <% (1..5).each do |index| %>
       <% if index == @answer.work_attribute_selected_index %>
-        <li><b><%= @answer.send("work_attribute_#{index}") %></b></li>
+        <li>
+          <b>
+            <%= @answer.send("work_attribute_#{index}") %> - <%= @answer.send("work_attribute_value_#{index}") %>
+          </b>
+        </li>
       <% else %>
-        <li><%= @answer.send("work_attribute_#{index}") %></li>
+        <li>
+          <%= @answer.send("work_attribute_#{index}") %> - <%= @answer.send("work_attribute_value_#{index}") %>
+        </li>
       <% end %>
     <% end %>
   </ul>
