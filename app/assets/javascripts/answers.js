@@ -41,7 +41,7 @@ var setCommitmentTitle = function() {
 $( document ).ready(function() {
   $( '#values' ).hide();
   $( '#company' ).hide();
-  //$( '#action' ).hide();
+  $( '#action' ).hide();
   $( '#work-ideal' ).hide();
   $( '#work' ).hide();
   $( '#work-select' ).hide();
