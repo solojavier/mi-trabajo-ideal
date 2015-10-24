@@ -13,6 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20151018195732) do
 
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
     t.string   "username"
     t.string   "company_attribute_1"
