@@ -47,6 +47,7 @@ $( document ).ready(function() {
   $( '#work-select' ).hide();
   $( '#commitment' ).hide();
   $( '#feeling' ).hide();
+  $( '#responsible' ).hide();
   $( '#action_missing' ).hide();
 
   $( '#welcome-next' ).click(function( event ) {
@@ -125,8 +126,17 @@ $( document ).ready(function() {
     }
   });
 
+  $( '#feeling-next' ).click(function( event ) {
+    event.preventDefault()
+
+    if ( validAttributes( $( '.feeling-attribute' ) ) ) {
+      $( '#feeling' ).hide();
+      $( '#responsible' ).show();
+    }
+  });
+
   $( '#submit' ).click(function( event ) {
-    if ( !validAttributes( $( '.feeling-attribute' ) ) ) {
+    if ( !validAttributes( $( '.responsible-attribute' ) ) ) {
       event.preventDefault();
     }
   });
@@ -145,4 +155,5 @@ $( document ).ready(function() {
 
   $('.work-attribute').children('input').slider();
   $('.feeling-attribute').children('input').slider();
+  $('.responsible-attribute').children('input').slider();
 });

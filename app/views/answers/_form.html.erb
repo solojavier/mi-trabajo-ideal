@@ -187,7 +187,17 @@
         <%= f.label :current_feeling %><br>
         <%= f.number_field :current_feeling, class: 'form-control', in: 0..10 %>
       </div>
-      <div class="form-group feeling-attribute">
+
+      <div class="from-group">
+        <%= button_tag 'Siguiente', id: 'feeling-next', class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div id="responsible" class="panel panel-primary">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+      <div class="form-group responsible-attribute">
         <%= f.label :responsible %><br>
         <%= f.number_field :responsible, class: 'form-control', in: 0..10 %>
       </div>
