@@ -1,0 +1,51 @@
+body{
+	background: #e6e6e6;
+}
+.panel{
+	border: none !important;
+}
+
+.panel-primary{
+	border: none;
+}
+
+.panel-body{
+	background: #e6e6e6;
+}
+
+.panel-primary>.panel-heading{
+    color: #000;
+    background-color: #e6e6e6;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    padding-bottom: 35px;
+}
+
+button {
+    background: #A4A4A4 !important;
+    width: 40% !important;
+    color: #fafafa !important;
+    border: 0 !important;
+    margin-top: 60px !important;
+}
+
+label {
+    margin-left: 45%;
+    margin-top: 31px;
+}
+
+.form-inline .work-attribute label{
+	margin-left: -150px;
+}
+
+.slider.slider-horizontal {
+    width: 350px;
+    margin-left: 40%;
+}
+
+.form-control {
+    width: 50%;
+    margin: auto;
+    height: 50px;
