@@ -41,7 +41,7 @@ var setCommitmentTitle = function() {
 $( document ).ready(function() {
   $( '#values' ).hide();
   $( '#company' ).hide();
-  $( '#action' ).hide();
+  //$( '#action' ).hide();
   $( '#work-ideal' ).hide();
   $( '#work' ).hide();
   $( '#work-select' ).hide();
@@ -131,15 +131,15 @@ $( document ).ready(function() {
     }
   });
 
-  $( '#answer_action_result' ).change(function() {
-    var result = $( this ).val();
+  $( '.action-attribute' ).change(function() {
+    var result = $('#no').prop('checked');
 
-    if ( result == 'Si' ) {
-      $( '#action_missing' ).hide();
-      $( '#action_missing' ).removeClass('action-attribute');
-    } else {
+    if ( result ) {
       $( '#action_missing' ).show();
       $( '#action_missing' ).addClass('action-attribute');
+    } else {
+      $( '#action_missing' ).hide();
+      $( '#action_missing' ).removeClass('action-attribute');
     }
   });
 
