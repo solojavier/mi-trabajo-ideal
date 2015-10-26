@@ -36,34 +36,104 @@ body{
 }
 
 .panel-primary>.panel-heading{
-    color: #000;
+    color: #137D9B;
     background-color: #fff;
     font-size: 42px;
-    font-weight: 100;
+    font-weight: bolder;
     text-align: center;
     line-height: 45px;
     padding-bottom: 35px;
     border-color: #fff;
 }
+.navbar-default {
+    background-color: #6656A0;
+}
 
-button {
-    background: #A4A4A4 !important;
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+button, input[type=submit] {
+    background: #DC8120 !important;
     width: 40% !important;
     color: #fafafa !important;
     margin-top: 60px !important;
     -webkit-transition: all .4s ease; -moz-transition: all .4s ease; -ms-transition: all .4s ease; transition: all .4s ease;
-    border:1px solid #A4A4A4 !important;
+    border:2px solid #DC8120 !important;
 }
-button:hover {
+button:hover, input[type=submit]:hover {
   background: #fafafa !important;
   color:#000 !important;
 }
 
 label {
-    margin-left: 45%;
+
     margin-top: 31px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+.b{
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
 }
 
+//Qué has hecho desde la última aplicación de la encuesta para hacer de Afosa tu trabajo Ideal?
+.left{
+    width: 20%;
+    float: left;
+    text-align: center;
+    margin-left: 30%;
+}
+.right{
+    width: 20%;
+    float: left;
+    text-align: center;
+    margin-right: 30%;
+}
+//¿Qué tanto cumple <name> con estas características?
+.slides label{
+    display: block;
+    width: 30%;
+    text-align: center;
+    margin-left: 10%;
+    padding-right: 30px;
+    float: left;
+}
+.slider.slider-horizontal{
+    position: relative;
+    float: left;
+    width: 45% !important;
+    margin: 20px 0 !important;
+}
+
+//En concreto... ¿A qué acción te comprometes contigo para mejorar este aspecto:
+.label-date{
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+.date{
+    width: 50%;
+    margin-left: 25%;
+    height: 50px;
+    font-size: 17px;
+}
+//como te sientes en Afosa
+#feeling label, #responsible label{
+    display: block;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+#feeling .slider.slider-horizontal, #responsible .slider.slider-horizontal{
+    float: none;
+    width: 50% !important;
+    margin-left: 25% !important;
+}
+
+//-----------
 .form-inline .work-attribute label{
 	margin-left: -150px;
 }
@@ -78,6 +148,8 @@ label {
     margin: auto;
     height: 50px;
     -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -ms-transition: all .5s ease; transition: all .5s ease;
+    font-size: 20px;
+    font-weight:lighter;
 }
 
 .form-control:focus {
@@ -102,6 +174,7 @@ label {
     border-bottom: 1px solid #A4A4A4;
     letter-spacing: 1px;
     padding-bottom: 5px;
+    font-size: 17px;
 }
 
 .checkbox input[type=checkbox], .checkbox input[type=radio]{

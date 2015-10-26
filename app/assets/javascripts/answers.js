@@ -157,3 +157,14 @@ $( document ).ready(function() {
   $('.feeling-attribute').children('input').slider();
   $('.responsible-attribute').children('input').slider();
 });
+
+
+//JS para mostrar/ocultar placeholder
+  $(document).ready(function(){
+     $('input,textarea').focus(function () {
+        $(this).data('placeholder', $(this).attr('placeholder'))
+               .attr('placeholder', '');
+      }).blur(function () {
+        $(this).attr('placeholder', $(this).data('placeholder'));
+      })
+    });
