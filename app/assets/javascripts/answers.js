@@ -95,6 +95,7 @@ $( document ).ready(function() {
       setWorkAttributes();
       $( '#work-ideal' ).hide();
       $( '#work' ).show();
+      $('.work-attribute').children('input').slider();
     }
   });
 
@@ -123,6 +124,7 @@ $( document ).ready(function() {
     if ( validAttributes( $( '.commitment-attribute' ) ) ) {
       $( '#commitment' ).hide();
       $( '#feeling' ).show();
+      $('.feeling-attribute').children('input').slider();
     }
   });
 
@@ -132,6 +134,7 @@ $( document ).ready(function() {
     if ( validAttributes( $( '.feeling-attribute' ) ) ) {
       $( '#feeling' ).hide();
       $( '#responsible' ).show();
+      $('.responsible-attribute').children('input').slider();
     }
   });
 
@@ -153,9 +156,6 @@ $( document ).ready(function() {
     }
   });
 
-  $('.work-attribute').children('input').slider();
-  $('.feeling-attribute').children('input').slider();
-  $('.responsible-attribute').children('input').slider();
 });
 
 

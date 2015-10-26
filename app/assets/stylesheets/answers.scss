@@ -25,6 +25,7 @@ body{
 }
 .panel{
 	border: none !important;
+  font-family: 'Trebuchet MS';
 }
 
 .panel-primary{
@@ -46,7 +47,8 @@ body{
     border-color: #fff;
 }
 .navbar-default {
-    background-color: #6656A0;
+  background-color: #6656A0;
+  font-family: 'Trebuchet MS';
 }
 
 .navbar-default .navbar-brand {
@@ -203,12 +205,8 @@ label {
 }
 
 .panel-footer{
-    text-align: center;
-    font-size: 20px;
-    background-color: #FAAC58;
+  text-align: center;
+  font-size: 20px;
+  background-color: #FAAC58;
+  font-family: 'Trebuchet MS';
 }
-
-
-
-
-
