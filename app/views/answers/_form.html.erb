@@ -127,23 +127,23 @@
     <div class="panel-body">
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
-        <%= f.number_field :work_attribute_value_1, class: 'form-control', in: 0..10 %>
+        <%= f.number_field :work_attribute_value_1, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'ticks_positions': '[0,10]' %>
       </div>
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
-        <%= f.number_field :work_attribute_value_2, class: 'form-control', in: 0..10 %>
+        <%= f.number_field :work_attribute_value_2, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'ticks_positions': '[0,10]' %>
       </div>
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
-        <%= f.number_field :work_attribute_value_3, class: 'form-control', in: 0..10 %>
+        <%= f.number_field :work_attribute_value_3, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'ticks_positions': '[0,10]' %>
       </div>
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
-        <%= f.number_field :work_attribute_value_4, in: 0..10 %>
+        <%= f.number_field :work_attribute_value_4, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'ticks_positions': '[0,10]' %>
       </div>
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
-        <%= f.number_field :work_attribute_value_5, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["No cumple de ninguna manera", "Cumple totalmente"]', 'ticks_positions': '[0,10]', in: 0..10 %>
+        <%= f.number_field :work_attribute_value_5, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["No cumple de ninguna manera", "Cumple totalmente"]', 'ticks_positions': '[0,10]' %>
       </div>
       <div class="from-group" style="margin-top:195px">
         <%= button_tag 'Siguiente', id: 'work-next', class: 'form-control' %>
@@ -181,10 +181,9 @@
   </div>
 
   <div id="feeling" class="panel panel-primary">
-    <div class="panel-heading"></div>
+    <div class="panel-heading"><%= t('current_feeling') %></div>
     <div class="panel-body">
       <div class="form-group feeling-attribute">
-        <%= f.label :current_feeling %><br>
         <%= f.number_field :current_feeling, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Muy mal", "Muy bien"]', 'ticks_positions': '[0,10]', in: 0..10 %>
       </div>
 
@@ -195,10 +194,9 @@
   </div>
 
   <div id="responsible" class="panel panel-primary">
-    <div class="panel-heading"></div>
+    <div class="panel-heading"><%= t('responsible') %></div>
     <div class="panel-body">
       <div class="form-group responsible-attribute">
-        <%= f.label :responsible %><br>
         <%= f.number_field :responsible, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["No estoy de acuerdo", "Totalmente de acuerdo"]', 'ticks_positions': '[0,10]', in: 0..10 %>
       </div>
       <div class="actions">
