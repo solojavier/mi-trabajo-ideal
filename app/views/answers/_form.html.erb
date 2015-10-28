@@ -35,7 +35,7 @@
       <div class="checkbox values-attribute">
         <% t('values_array').each do |value| %>
           <%= f.label value %>
-          <%= f.radio_button :values, value, checked: true %>
+          <%= f.radio_button :values, value, id: "answer_#{value}", checked: true %>
         <% end %>
       </div>
       <div class="from-group values-attribute">
@@ -82,11 +82,11 @@
       <%= f.label t('result'), class: 'b'%>
       <div class="form-group action-attribute left">
         <%= f.label 'Si' %>
-        <%= f.radio_button :action_result, 'Si', checked: true %>
+        <%= f.radio_button :action_result, 'Si', id: 'answer_Si', checked: true %>
       </div>
       <div class="form-group action-attribute right">
         <%= f.label 'No' %>
-        <%= f.radio_button :action_result, 'No', id: 'no' %>
+        <%= f.radio_button :action_result, 'No', id: 'answer_No' %>
       </div>
       <div id="action_missing" class="form-group">
         <!--%= f.label :action_missing %-->
@@ -127,7 +127,7 @@
     <div class="panel-body">
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
-        <%= f.number_field :work_attribute_value_1, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'ticks_positions': '[0,10]' %>
+        <%= f.number_field :work_attribute_value_1, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["No cumple de ninguna manera", "Cumple totalmente"]', 'ticks_positions': '[0,10]' %>
       </div>
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
@@ -143,7 +143,7 @@
       </div>
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
-        <%= f.number_field :work_attribute_value_5, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["No cumple de ninguna manera", "Cumple totalmente"]', 'ticks_positions': '[0,10]' %>
+        <%= f.number_field :work_attribute_value_5, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'ticks_positions': '[0,10]' %>
       </div>
       <div class="from-group" style="margin-top:195px">
         <%= button_tag 'Siguiente', id: 'work-next', class: 'form-control' %>
@@ -171,7 +171,7 @@
       </div>
       <div class="form-group commitment-attribute">
         <%= f.label :commitment_date, class: 'label-date' %><br>
-        <%= f.date_field :commitment_date, value: Date.tomorrow, class: 'date'%>
+        <%= f.text_field :commitment_date, value: Date.tomorrow, class: 'date' %>
       </div>
 
       <div class="from-group">

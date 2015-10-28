@@ -23,7 +23,8 @@ var setWorkSelect = function() {
   $( '.work-ideal-attribute' ).each(function(index) {
     var text = $( this ).children('input').val() + ' - ' +
       $( '.work-attribute' ).children('input').eq(index).attr('value');
-    $('#work_attribute_selected_index').append($('<label>', { text: text }));
+    $('#work_attribute_selected_index').append($('<label>',
+                                                 { for: text, text: text }));
     $('#work_attribute_selected_index').append($('<input>', {
       id: text, checked: true, type: 'radio', value: index+1,
       name: "answer[work_attribute_selected_index]"
@@ -145,7 +146,7 @@ $( document ).ready(function() {
   });
 
   $( '.action-attribute' ).change(function() {
-    var result = $('#no').prop('checked');
+    var result = $('#answer_No').prop('checked');
 
     if ( result ) {
       $( '#action_missing' ).show();
@@ -156,15 +157,16 @@ $( document ).ready(function() {
     }
   });
 
+  $('input,textarea').focus(function () {
+    $(this).data('placeholder', $(this).attr('placeholder'))
+    .attr('placeholder', '');
+  }).blur(function () {
+    $(this).attr('placeholder', $(this).data('placeholder'));
+  })
+
+  $(".date").datepicker({
+    startDate: "2015-05-08 00:00:00",
+    format: "dd/mm/yyyy"
+  });
+
 });
-
-
-//JS para mostrar/ocultar placeholder
-  $(document).ready(function(){
-     $('input,textarea').focus(function () {
-        $(this).data('placeholder', $(this).attr('placeholder'))
-               .attr('placeholder', '');
-      }).blur(function () {
-        $(this).attr('placeholder', $(this).data('placeholder'));
-      })
-    });
