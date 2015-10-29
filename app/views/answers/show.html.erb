@@ -20,7 +20,7 @@
       <% end %>
     <% end %>
   </ul>
-  <p><%= t('commitment_note') %> <%= @answer.commitment_action %> antes del <%= @answer.commitment_date.strftime("%d de %b de %Y")%></p>
+  <p><%= t('commitment_note') %> <%= @answer.commitment_action %> antes del <%= l(@answer.commitment_date, format: "%d de %B de %Y") %></p>
 </div>
 <div class="panel-footer"><%= t('footer') %></div>
 
