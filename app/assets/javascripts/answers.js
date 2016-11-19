@@ -1,3 +1,5 @@
+
+
 var validAttributes = function(selector) {
   var emptyFields = false;
 
@@ -16,6 +18,7 @@ var validAttributes = function(selector) {
 var setWorkAttributes = function() {
   $( '.work-ideal-attribute' ).each(function(index) {
     $('.work-attribute:nth-child('+(index+1)+')').children('label').text($( this ).children('input').val());
+    $('.work_improvement-attribute:nth-child('+(index+1)+')').children('label').text($( this ).children('input').val());
   });
 };
 
@@ -40,6 +43,8 @@ var setCommitmentTitle = function() {
 };
 
 $( document ).ready(function() {
+  $('.rank-attribute').children('input').slider();
+
   $( '#values' ).hide();
   $( '#company' ).hide();
   $( '#action' ).hide();
@@ -47,9 +52,32 @@ $( document ).ready(function() {
   $( '#work' ).hide();
   $( '#work-select' ).hide();
   $( '#commitment' ).hide();
-  $( '#feeling' ).hide();
   $( '#responsible' ).hide();
   $( '#action_missing' ).hide();
+  $( '#work_improvement' ).hide();
+  $( '#score_boss' ).hide();
+  $( '#score_company' ).hide();
+  $( '#rank_training' ).hide();
+  $( '#rank_development' ).hide();
+  $( '#rank_work' ).hide();
+  $( '#rank_team' ).hide();
+  $( '#rank_information' ).hide();
+  $( '#rank_voice' ).hide();
+  $( '#rank_voice_boss' ).hide();
+  $( '#rank_know' ).hide();
+  $( '#rank_comunication' ).hide();
+  $( '#rank_security' ).hide();
+  $( '#rank_security_2' ).hide();
+  $( '#rank_expectations' ).hide();
+  $( '#rank_expectations_2' ).hide();
+  $( '#rank_culture' ).hide();
+  $( '#rank_boss' ).hide();
+  $( '#rank_boss_2' ).hide();
+  $( '#rank_respect' ).hide();
+  $( '#rank_happywork' ).hide();
+  $( '#rank_happywork_2' ).hide();
+  $( '#feeling' ).hide();
+  $( '#current_feeling_2' ).hide();
 
   $( '#welcome-next' ).click(function( event ) {
     event.preventDefault();
@@ -76,18 +104,19 @@ $( document ).ready(function() {
 
     if ( validAttributes( $( '.company-attribute' ) ) ) {
       $( '#company' ).hide();
-      $( '#action' ).show();
-    }
-  });
-
-  $( '#action-next' ).click(function( event ) {
-    event.preventDefault();
-
-    if ( validAttributes( $( '.action-attribute' ) ) ) {
-      $( '#action' ).hide();
+      // $( '#action' ).show();
       $( '#work-ideal' ).show();
     }
   });
+
+  // $( '#action-next' ).click(function( event ) {
+    //   event.preventDefault();
+
+    //   if ( validAttributes( $( '.action-attribute' ) ) ) {
+    //     $( '#action' ).hide();
+    //     $( '#work-ideal' ).show();
+    //   }
+  // });
 
   $( '#work-ideal-next' ).click(function( event ) {
     event.preventDefault();
@@ -104,40 +133,223 @@ $( document ).ready(function() {
     event.preventDefault()
 
     if ( validAttributes( $( '.work-attribute' ) ) ) {
-      setWorkSelect();
+      // setWorkSelect();
       $( '#work' ).hide();
-      $( '#work-select' ).show();
+      $( '#work_improvement' ).show();
+      // $('.work_improvement-attribute').children('input').slider();
     }
   });
 
-  $( '#work-select-next' ).click(function( event ) {
-    event.preventDefault();
-    if ( validAttributes( $( '.work-attribute' ) ) ) {
-      setCommitmentTitle();
-      $( '#work-select' ).hide();
-      $( '#commitment' ).show();
-    }
-  });
-
-  $( '#commitment-next' ).click(function( event ) {
+  $( '#work_improvement-next' ).click(function( event ) {
     event.preventDefault()
 
-    if ( validAttributes( $( '.commitment-attribute' ) ) ) {
-      $( '#commitment' ).hide();
-      $( '#feeling' ).show();
-      $('.feeling-attribute').children('input').slider();
+    if ( validAttributes( $( '.work_improvement-attribute' ) ) ) {
+      $( '#work_improvement' ).hide();
+      $( '#score_boss' ).show();
+      // $( '#feeling' ).show();
+      $('.work_improvement-attribute').children('input').slider();
     }
   });
 
-  $( '#feeling-next' ).click(function( event ) {
+  $( '#score_boss-next' ).click(function( event ){
+    event.preventDefault()
+
+      if( validAttributes( $( '.work-attribute' ) ) ){
+        $( '#score_boss' ).hide();
+        $( '#score_company' ).show();
+
+      }
+  });
+
+  $( '#score_company-next' ).click(function( event ){
+    event.preventDefault()
+
+      if( validAttributes( $( '.work-attribute' ) ) ){
+        $( '#score_company' ).hide();
+        $( '#rank_training' ).show();
+      }
+  });
+
+  $( '#rank_training-next' ).click(function( event ){
+    event.preventDefault()
+
+      if( validAttributes( $( '.work-attribute' ) ) ){
+        $( '#rank_training' ).hide();
+        $( '#rank_development' ).show();
+      }
+  });
+
+  $( '#rank_development-next' ).click(function( event ){
+    event.preventDefault()
+
+      if( validAttributes( $( '.work-attribute' ) ) ){
+        $( '#rank_development' ).hide();
+        $( '#rank_work' ).show();
+      }
+  });
+
+  $( '#rank_work-next' ).click(function( event ){
+    event.preventDefault()
+
+    if( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_work' ).hide();
+      $( '#rank_team' ).show();
+    }
+  });
+
+  $( '#rank_team-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_team' ).hide();
+      $( '#rank_information' ).show();
+    };
+  })
+  $( '#rank_information-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_information' ).hide();
+      $( '#rank_voice' ).show();
+    };
+  })
+  $( '#rank_voice-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_voice' ).hide();
+      $( '#rank_voice_boss').show();
+    };
+  })
+  $( '#rank_voice_boss-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_voice_boss' ).hide();
+      $( '#rank_know' ).show();
+    };
+  })
+  $( '#rank_know-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_know' ).hide();
+      $( '#rank_comunication').show();
+    };
+  })
+  $( '#rank_comunication-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_comunication' ).hide();
+      $( '#rank_security' ).show();
+    };
+  })
+  $( '#rank_security-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_security' ).hide();
+      $( '#rank_security_2' ).show();
+    };
+  })
+  $( '#rank_security_2-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_security_2' ).hide();
+      $( '#rank_expectations' ).show();
+    };
+  })
+  $( '#rank_expectations-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_expectations' ).hide();
+      $( '#rank_expectations_2' ).show();
+    };
+  })
+  $( '#rank_expectations_2-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_expectations_2' ).hide();
+      $( '#rank_culture' ).show();
+    };
+  })
+  $( '#rank_culture-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_culture' ).hide();
+      $( '#rank_boss' ).show();
+    };
+  })
+  $( '#rank_boss-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_boss' ).hide();
+      $( '#rank_boss_2').show();
+    };
+  })
+  $( '#rank_boss_2-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_boss_2' ).hide();
+      $( '#rank_respect' ).show();
+    };
+  })
+  $( '#rank_respect-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_respect' ).hide();
+      $( '#rank_happywork' ).show();
+    };
+  })
+  $( '#rank_happywork-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_happywork' ).hide();
+      $( '#rank_happywork_2' ).show();
+    };
+  })
+  $( '#rank_happywork_2-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.rank-attribute' ) ) ){
+      $( '#rank_happywork_2' ).hide();
+      $( '#feeling' ).show();
+    };
+  })
+
+    $( '#feeling-next' ).click(function( event ) {
     event.preventDefault()
 
     if ( validAttributes( $( '.feeling-attribute' ) ) ) {
+      console.log("antes de feeling 2");
       $( '#feeling' ).hide();
-      $( '#responsible' ).show();
-      $('.responsible-attribute').children('input').slider();
+      $( '#current_feeling_2' ).show();
     }
   });
+
+  $( '#current_feeling_2-next' ).click(function( event ){
+    event.preventDefault();
+
+    if ( validAttributes( $( '.feeling-attribute' ) ) ){
+      $( '#current_feeling_2' ).hide();
+      $( '#responsible' ).show();
+      $('.responsible-attribute').children('input').slider();
+      console.log("antes de enviar");
+    };
+  });
+
+
+
+
 
   $( '#submit' ).click(function( event ) {
     if ( !validAttributes( $( '.responsible-attribute' ) ) ) {
