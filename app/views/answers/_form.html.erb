@@ -16,26 +16,12 @@
 
   <div id="welcome" class="panel panel-primary">
     <div class="panel-heading"><%= t('welcome') %></div>
-    <div class="panel-body" id="welcome-body">
+    <div class="panel-body">
       <%= image_tag("logotipo.png", class: 'logo') %>
-      <br><br>
-      <div id="username-group" class="form-group">
+      <div id="username-group" class="from-group">
+        <!--%= f.label :username %-->
+        <br><br>
         <%= f.text_field :username, class: 'form-control', :placeholder => "Nombre completo" %>
-      </div>
-      <div id="departamento-group" class="form-group">
-        <%= f.select :departamento, options_for_select(t("departamentos").invert), {}, class: "form-control" %>
-      </div>
-      <div id="antiguedad-group" class="form-group">
-        <%= f.number_field :antiguedad, class: 'form-control', in: 0..50,  :placeholder => "Antigüedad en la empresa (0 o más) " %> 
-      </div>
-      <div id="escolaridad-group" class="form-group">
-        <%= f.select :escolaridad, options_for_select(t("escolaridad").invert), {}, class: "form-control" %>
-      </div>
-      <div id="genero-group" class="form-group">
-        <%= f.select :genero, options_for_select(t("genero").invert), {}, class: "form-control" %>
-      </div>
-      <div id="edad-group" class="form-group">
-        <%= f.number_field :edad, class: 'form-control', in: 17..100, :placeholder => "Edad" %> 
       </div>
       <div class="from-group">
         <%= button_tag 'Entrar', id: 'welcome-next', class: 'form-control' %>
@@ -53,6 +39,7 @@
         <% end %>
       </div>
       <div class="from-group values-attribute">
+        <!--%= f.label :values_description %-->
         <%= f.text_field :values_description, class: 'form-control', :placeholder => "¿Por que?" %>
       </div>
       <div class="from-group">
@@ -73,14 +60,46 @@
       <div class="form-group company-attribute">
         <%= f.text_field :company_attribute_3, class: 'form-control' , :placeholder => "Dato 3" %>
       </div>
+      <div class="form-group company-attribute">
+        <%= f.text_field :company_attribute_4, class: 'form-control' , :placeholder => "Dato 4" %>
+      </div>
+      <div class="form-group company-attribute">
+        <%= f.text_field :company_attribute_5, class: 'form-control' , :placeholder => "Dato 5" %>
+      </div>
       <div class="from-group">
         <%= button_tag 'Siguiente', id: 'company-next', class: 'form-control' %>
       </div>
     </div>
   </div>
 
+  <div id="action" class="panel panel-primary">
+    <div class="panel-heading"><%= t('action_taken') %></div>
+    <div class="panel-body">
+      <div class="form-group action-attribute">
+        <%= f.text_field :action_taken, class: 'form-control' , :placeholder => "Responde aqui" %>
+      </div>
+
+      <%= f.label t('result'), class: 'b'%>
+      <div class="form-group action-attribute left">
+        <%= f.label 'Si' %>
+        <%= f.radio_button :action_result, 'Si', id: 'answer_Si', checked: true %>
+      </div>
+      <div class="form-group action-attribute right">
+        <%= f.label 'No' %>
+        <%= f.radio_button :action_result, 'No', id: 'answer_No' %>
+      </div>
+      <div id="action_missing" class="form-group">
+        <!--%= f.label :action_missing %-->
+        <%= f.text_field :action_missing, class: 'form-control', :placeholder => '¿Qué crees que hizo falta?' %>
+      </div>
+      <div class="from-group">
+        <%= button_tag 'Siguiente', id: 'action-next', class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
   <div id="work-ideal" class="panel panel-primary">
-    <div class="panel-heading"><%= t('work_ideal') %> </div>
+    <div class="panel-heading"><%= t('work_ideal') %></div>
     <div class="panel-body">
       <div class="form-group work-ideal-attribute">
         <%= f.text_field :work_attribute_1, class: 'form-control', :placeholder => 'Caracteristica 1'%>
@@ -108,7 +127,7 @@
     <div class="panel-body">
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
-        <%= f.number_field :work_attribute_value_1, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Mal", "Muy bien"]', 'ticks_positions': '[0,10]' %>
+        <%= f.number_field :work_attribute_value_1, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["No cumple de ninguna manera", "Cumple totalmente"]', 'ticks_positions': '[0,10]' %>
       </div>
       <div class="form-inline work-attribute slides">
         <%= label_tag '', class: 'label' %>
@@ -132,327 +151,31 @@
     </div>
   </div>
 
-  <div id="work_improvement" class="panel panel-primary">
-    <div class="panel-heading"><%= t('work_improvement') %> </div>
+  <div id="work-select" class="panel panel-primary">
+    <div class="panel-heading"><%= t('work_attribute_selected') %></div>
     <div class="panel-body">
-      <div class="form-group work_improvement-attribute slides">
-        <%= label_tag '', class: 'label' %>
-        <%= f.text_field :company_mejora_1, class: 'form-control', :placeholder => "Mejora 1" %>
-      </div>
-      <div class="form-group work_improvement-attribute slides">
-        <%= label_tag '', class: 'label' %>
-        <%= f.text_field :company_mejora_2, class: 'form-control', :placeholder => "Mejora 2" %>
-      </div>
-      <div class="form-group work_improvement-attribute slides">
-        <%= label_tag '', class: 'label' %>
-        <%= f.text_field :company_mejora_3, class: 'form-control', :placeholder => "Mejora3" %>
-      </div>
-      <div class="form-group work_improvement-attribute slides">
-        <%= label_tag '', class: 'label' %>
-        <%= f.text_field :company_mejora_4, class: 'form-control', :placeholder => "Mejora 4" %>
-      </div>
-      <div class="form-group work_improvement-attribute slides">
-        <%= label_tag '', class: 'label' %>
-        <%= f.text_field :company_mejora_5, class: 'form-control', :placeholder => "Mejora 5" %>
-      </div>
-
-      <div class="from-group" style="margin-top:15px">
-        <%= button_tag 'Siguiente', id: 'work_improvement-next', class: 'form-control' %>
-      </div>
-
-    </div>
-  </div>
-
-  <div id="score_boss" class="panel panel-primary">
-    <div class="panel-heading"><%= t('score_boss') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :score_boss_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Mal", "Muy bien"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
+      <div class="checkbox work-select-attribute" id="work_attribute_selected_index">
       </div>
       <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'score_boss-next', class: 'form-control' %>
+        <%= button_tag 'Siguiente', id: 'work-select-next', class: 'form-control' %>
       </div>
     </div>
   </div>
 
-  <div id="score_company" class="panel panel-primary">
-    <div class="panel-heading"><%= t('score_company') %></div>
+  <div id="commitment" class="panel panel-primary">
+    <div class="panel-heading"><%= t('commitment', attribute: 'ATTRIBUTE') %></div>
     <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :score_company_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Mal", "Muy bien"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
+      <div class="form-group commitment-attribute">
+        <!--%= f.label :commitment_action %><br-->
+        <%= f.text_field :commitment_action, class: 'form-control', :placeholder => 'Acción' %>
       </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'score_company-next', class: 'form-control' %>
+      <div class="form-group commitment-attribute">
+        <%= f.label :commitment_date, class: 'label-date' %><br>
+        <%= f.text_field :commitment_date, value: Date.tomorrow, class: 'date' %>
       </div>
-    </div>
-  </div>
 
-  <div id="rank_training" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_training') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_training_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Mal", "Muy bien"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
       <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_training-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_development" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_development') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_development_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_development-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_work" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_work') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_work_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_work-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_team" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_team') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_team_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_team-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_information" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_information') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_information_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_information-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_voice" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_voice') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_voice_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_voice-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_voice_boss" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_voice_boss') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_voice_boss_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_voice_boss-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_know" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_know') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_know_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_know-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_comunication" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_comunication') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_comunication_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Mal", "Muy bien"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_comunication-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_security" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_security') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_security_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_security-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_security_2" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_security_2') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_security_2_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_security_2-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_expectations" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_expectations') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_expectations_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_expectations-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_expectations_2" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_expectations_2') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_expectations_2_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_expectations_2-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_culture" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_culture') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_culture_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_culture-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_boss" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_boss') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_boss_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_boss-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_boss_2" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_boss_2') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_boss_2_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_boss_2-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_respect" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_respect') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_respect_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_respect-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_happywork" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_happywork') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_happywork_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_happywork-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="rank_happywork_2" class="panel panel-primary">
-    <div class="panel-heading"><%= t('rank_happywork_2') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :rank_happywork_2_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Siguiente', id: 'rank_happywork_2-next', class: 'form-control' %>
+        <%= button_tag 'Siguiente', id: 'commitment-next', class: 'form-control' %>
       </div>
     </div>
   </div>
@@ -460,27 +183,12 @@
   <div id="feeling" class="panel panel-primary">
     <div class="panel-heading"><%= t('current_feeling') %></div>
     <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :current_feeling, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Muy mal", "Muy bien"]', 'ticks_positions': '[0,10]', in: 0..10, :placeholder => "Escribe del 1 al 10" %>
+      <div class="form-group feeling-attribute">
+        <%= f.number_field :current_feeling, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Muy mal", "Muy bien"]', 'ticks_positions': '[0,10]', in: 0..10 %>
       </div>
 
       <div class="from-group">
         <%= button_tag 'Siguiente', id: 'feeling-next', class: 'form-control' %>
-      </div>
-    </div>
-  </div>
-
-  <div id="current_feeling_2" class="panel panel-primary">
-    <div class="panel-heading"><%= t('current_feeling_2') %></div>
-    <div class="panel-body">
-      <div class="form-group rank-attribute">
-        <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
-        <%= f.number_field :current_feeling_2_value, class: 'form-control', 'data-slider-ticks': "[0, 10]", 'data-slider-ticks-labels': '["Totalmente en desacuerdo", "Totalmente en acuerdo"]', 'ticks_positions': '[0,10]' %> 
-        <br><br>
-      </div>
-      <div class="from-group">
-        <%= button_tag 'Enviar', id: 'current_feeling-next', class: 'form-control' %>
       </div>
     </div>
   </div>

@@ -6,19 +6,21 @@
   <h2><%= @answer.username %></h2>
   </div>
   <ul>
-    <p>Aspectos que propones mejorar. </p>
     <% (1..5).each do |index| %>
-      
+      <% if index == @answer.work_attribute_selected_index %>
         <li>
           <b>
             <%= @answer.send("work_attribute_#{index}") %> - <%= @answer.send("work_attribute_value_#{index}") %>
           </b>
         </li>
-    
-      
+      <% else %>
+        <li>
+          <%= @answer.send("work_attribute_#{index}") %> - <%= @answer.send("work_attribute_value_#{index}") %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
-
+  <p><%= t('commitment_note') %> <%= @answer.commitment_action %> antes del <%= l(@answer.commitment_date, format: "%d de %B de %Y") %></p>
 </div>
 <div class="panel-footer"><%= t('footer') %></div>
 

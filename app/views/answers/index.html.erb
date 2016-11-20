@@ -1,144 +1,76 @@
-<style type="text/css" >
-  table{ margin: 50px 0; }
-  tr, td { min-width:140px; padding: 5px 25px; }
-  .header { text-align: center; display: block; width:300%; background:#f2f2f2;  }
-  .th { background: #f2f2f2; font-weight: 900;  padding: 5px; position: fixed; min-height: 61px; min-width: 120px; min-height:100px }
-  .tab{     display: block; margin-left: 120px; }
-</style>
-
 <h1>Listing Answers</h1>
 
-<div class="table-responsive">
-  <table class="table-striped">
-    <thead>
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Company attribute 1</th>
+      <th>Company attribute 2</th>
+      <th>Company attribute 3</th>
+      <th>Company attribute 4</th>
+      <th>Company attribute 5</th>
+      <th>Action taken</th>
+      <th>Action result</th>
+      <th>Action missing</th>
+      <th>Work attribute 1</th>
+      <th>Work attribute 2</th>
+      <th>Work attribute 3</th>
+      <th>Work attribute 4</th>
+      <th>Work attribute 5</th>
+      <th>Work attribute value 1</th>
+      <th>Work attribute value 2</th>
+      <th>Work attribute value 3</th>
+      <th>Work attribute value 4</th>
+      <th>Work attribute value 5</th>
+      <th>Work attribute selected index</th>
+      <th>Commitment action</th>
+      <th>Commitment date</th>
+      <th>Company</th>
+      <th>Current Feeling</th>
+      <th>Responsible</th>
+      <th>Values</th>
+      <th>Values description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @answers.each do |answer| %>
       <tr>
-        <th class="th" style="padding-top:40px; background:#fff;">Username</th>
-        <th class="tab" style="padding-top:40px;">Dpto</th>
-        <th>Antiguedad</th>
-        <th>Escolaridad</th>
-        <th>Genero</th>
-        <th>Edad</th>
-        <th>Company attribute 1</th>
-        <th>Company attribute 2</th>
-        <th>Company attribute 3</th>
-        <th colspan="3">  
-          <table style="margin: 0 10px;"> <tr><th class="header">Work attribute 1</th></tr><tr><td>Descripción</td><td>Calificación</td><td>Mejora</td></tr></table>
-        </th>
-        <th colspan="3">  
-          <table style="margin: 0 10px;"> <tr><th class="header">Work attribute 2</th></tr><tr><td>Descripción</td><td>Calificación</td><td>Mejora</td></tr></table>
-        </th>
-        <th colspan="3">  
-          <table style="margin: 0 10px;"> <tr><th class="header">Work attribute 3</th></tr><tr><td>Descripción</td><td>Calificación</td><td>Mejora</td></tr></table>
-        </th>
-        <th colspan="3">  
-          <table style="margin: 0 10px;"> <tr><th class="header">Work attribute 4</th></tr><tr><td>Descripción</td><td>Calificación</td><td>Mejora</td></tr></table>
-        </th>
-        <th colspan="3">  
-          <table style="margin:5px;"> <tr><th class="header">Work attribute 5</th></tr><tr><td>Descripción</td><td>Calificación</td><td>Mejora</td></tr></table>
-        </th>
-
-        <th>Company</th>
-
-        <th>¿Cómo calificas el reconocimiento que te brinda tu jefe?</th>
-        <th>¿Cómo calificas el reconocimiento por parte de tus compañeros de trabajo y demás áreas de la empresa?</th>
-        <th>¿Cómo consideras la capacitación que te brinda la empresa?</th>
-        <th>Tienes posibilidad de desarrollo en Afosa</th>
-        <th>El trabajo de todos y cada uno de tus compañeros de trabajo es importante</th>
-        <th>Te gusta colaborar con tu equipo de trabajo para todas las actividades</th>
-        <th>Recibes adecuadamente y en tiempo la información general de la empresa</th>
-        <th>Tienes la libertad de expresar lo que piensas frente a tus compañeros de trabajo y jefe inmediato</th>
-        <th>Tienes la posibilidad de comunicarte con las personas que ocupan puestos gerenciales y directivos</th>
-        <th>Conoces tus objetivos y sabes qué resultados se esperan de ti</th>
-        <th>¿Cómo consideras la comunicación general en Afosa?</th>
-        <th>La empresa mantiene un ambiente seguro para que tu trabajes</th>
-        <th>Realizas con seguridad tus actividades diarias</th>
-        <th>Afosa es una empresa que cumple con tus expectativas personales</th>
-        <th>Afosa es una empresa que cumple con tus expectativas laborales y/o profesionales</th>
-        <th>Te sientes identificado con la cultura de Afosa</th>
-        <th>La forma de dirigir de tu jefe inmediato es la correcta</th>
-        <th>Tu jefe inmediato sabe delegar tareas para cada uno de los miembros de su equipo de trabajo</th>
-        <th>Soy tratado con respeto por mi jefe inmediato</th>
-        <th>Te sientes feliz con la labor que realizas</th>
-        <th>Afosa me parece un lugar muy agradable para trabajar, me gustan sus instalaciones</th>
-        <th>En general en Afosa te sientes</th>
-        <th>Consideras que Afosa es tu trabajo ideal</th>
-
-        <th>Responsible</th>
-        <th>Values</th>
-        <th>Values description</th>
-        <th colspan="3"></th>
+        <td><%= answer.username %></td>
+        <td><%= answer.company_attribute_1 %></td>
+        <td><%= answer.company_attribute_2 %></td>
+        <td><%= answer.company_attribute_3 %></td>
+        <td><%= answer.company_attribute_4 %></td>
+        <td><%= answer.company_attribute_5 %></td>
+        <td><%= answer.action_taken %></td>
+        <td><%= answer.action_result %></td>
+        <td><%= answer.action_missing %></td>
+        <td><%= answer.work_attribute_1 %></td>
+        <td><%= answer.work_attribute_2 %></td>
+        <td><%= answer.work_attribute_3 %></td>
+        <td><%= answer.work_attribute_4 %></td>
+        <td><%= answer.work_attribute_5 %></td>
+        <td><%= answer.work_attribute_value_1 %></td>
+        <td><%= answer.work_attribute_value_2 %></td>
+        <td><%= answer.work_attribute_value_3 %></td>
+        <td><%= answer.work_attribute_value_4 %></td>
+        <td><%= answer.work_attribute_value_5 %></td>
+        <td><%= answer.work_attribute_selected_index %></td>
+        <td><%= answer.commitment_action %></td>
+        <td><%= answer.commitment_date %></td>
+        <td><%= answer.company %></td>
+        <td><%= answer.current_feeling %></td>
+        <td><%= answer.responsible %></td>
+        <td><%= answer.values %></td>
+        <td><%= answer.values_description %></td>
+        <td><%= link_to 'Show', answer %></td>
+        <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
+        <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    </thead>
-
-    <tbody>
-      <% @answers.each do |answer| %>
-        <tr>
-          <td class="th"><%= answer.username %></td>
-          <td class="tab"><%= answer.departamento %></td>
-          <td><%= answer.antiguedad %> años </td>
-          <td><%= answer.escolaridad %></td>
-          <td><%= answer.genero %></td>
-          <td><%= answer.edad %></td>
-          <td><%= answer.company_attribute_1 %></td>
-          <td><%= answer.company_attribute_2 %></td>
-          <td><%= answer.company_attribute_3 %></td>
-          
-          <td><%= answer.work_attribute_1 %></td>
-          <td><%= answer.work_attribute_value_1 %></td>
-          <td><%= answer.company_mejora_1 %></td>
-          <td><%= answer.work_attribute_2 %></td>
-          <td><%= answer.work_attribute_value_2 %></td>
-          <td><%= answer.company_mejora_2 %></td>
-          <td><%= answer.work_attribute_3 %></td>
-          <td><%= answer.work_attribute_value_3 %></td>
-          <td><%= answer.company_mejora_3 %></td>
-          <td><%= answer.work_attribute_4 %></td>
-          <td><%= answer.work_attribute_value_4 %></td>
-          <td><%= answer.company_mejora_4 %></td>
-          <td><%= answer.work_attribute_5 %></td>
-          <td><%= answer.work_attribute_value_5 %></td>
-          <td><%= answer.company_mejora_5 %></td>
-
-          <td><%= answer.company %></td>
-
-          <td> <%= answer.score_boss_value %> </td>
-          <td> <%= answer.score_company_value %> </td>
-          <td> <%= answer.rank_training_value %> </td>
-          <td> <%= answer.rank_development_value %> </td>
-          <td> <%= answer.rank_work_value %> </td>
-          <td> <%= answer.rank_team_value %> </td>
-          <td> <%= answer.rank_information_value %> </td>
-          <td> <%= answer.rank_voice_value %> </td>
-          <td> <%= answer.rank_voice_boss_value %> </td>
-          <td> <%= answer.rank_know_value %> </td>
-          <td> <%= answer.rank_comunication_value %> </td>
-          <td> <%= answer.rank_security_value %> </td>
-          <td> <%= answer.rank_security_2_value %> </td>
-          <td> <%= answer.rank_expectations_value %> </td>
-          <td> <%= answer.rank_expectations_2_value %> </td>
-          <td> <%= answer.rank_culture_value %> </td>
-          <td> <%= answer.rank_boss_value %> </td>
-          <td> <%= answer.rank_boss_2_value %> </td>
-          <td> <%= answer.rank_respect_value %> </td>
-          <td> <%= answer.rank_happywork_value %> </td>
-          <td> <%= answer.rank_happywork_2_value %> </td>
-          <td><%= answer.current_feeling %></td>
-          <td> <%= answer.current_feeling_2_value %> </td>
-
-          <td><%= answer.responsible %></td>
-          <td><%= answer.values %></td>
-          <td><%= answer.values_description %></td>
-
-          <td> <%= link_to 'Show', answer %> </td> 
-          <td> <%= link_to 'Edit', edit_answer_path(answer) %> </td>
-          <td> <%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  
-
-</div>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 
