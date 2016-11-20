@@ -346,7 +346,6 @@ $( document ).ready(function() {
     event.preventDefault()
 
     if ( validAttributes( $( '.feeling-attribute' ) ) ) {
-      console.log("antes de feeling 2");
       $( '#feeling' ).hide();
       $( '#current_feeling_2' ).show();
     }
@@ -359,13 +358,8 @@ $( document ).ready(function() {
       $( '#current_feeling_2' ).hide();
       $( '#responsible' ).show();
       $('.responsible-attribute').children('input').slider();
-      console.log("antes de enviar");
     };
   });
-
-
-
-
 
   $( '#submit' ).click(function( event ) {
     if ( !validAttributes( $( '.responsible-attribute' ) ) ) {
