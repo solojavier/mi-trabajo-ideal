@@ -26,13 +26,9 @@ class AnswersController < ApplicationController
   def answer_params
     params.require(:answer).permit(:username, :departamento, :antiguedad, :escolaridad, :genero, :edad,
                                     :company_attribute_1, :company_attribute_2, :company_attribute_3, 
-                                    # :company_attribute_4, :company_attribute_5,
-                                    # :action_taken, :action_missing, :action_result, 
                                     :work_attribute_1,:work_attribute_2, :work_attribute_3, :work_attribute_4, :work_attribute_5,
                                     :work_attribute_value_1, :work_attribute_value_2, :work_attribute_value_3, :work_attribute_value_4, :work_attribute_value_5,
                                     :company_mejora_1, :company_mejora_2, :company_mejora_3, :company_mejora_4 , :company_mejora_5,
-                                    # :work_attribute_selected_index,
-                                    # :commitment_action, :commitment_date,
                                     :company, 
                                     :current_feeling, 
                                     :responsible,

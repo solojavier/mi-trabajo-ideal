@@ -11,7 +11,6 @@ var validAttributes = function(selector) {
       $( this ).removeClass('has-error')
     }
   });
-
   return !emptyFields;
 };
 
@@ -43,6 +42,16 @@ var setCommitmentTitle = function() {
 };
 
 $( document ).ready(function() {
+
+  $('#new_answer').on('keyup keypress', function(e) {
+    var keyCode = e.keyCode || e.which;
+    if (keyCode === 13) { 
+      alert("enter enter");
+      e.preventDefault();
+      return false;
+    }
+  });
+
   $('.rank-attribute').children('input').slider();
 
   $( '#values' ).hide();
@@ -84,10 +93,30 @@ $( document ).ready(function() {
 
     if ( $( '#answer_username' ).val() == '' ) {
       $( '#username-group' ).addClass('has-error');
-    } else {
+    }
+    else if ( $( '#answer_username' ).val() == '' ) {
+      $( '#username-group' ).addClass('has-error');
+    }
+    else if ( $( '#answer_departamento' ).val() = ''){
+      $( '#departamento-group').addClass('has-error');
+    }
+    else if ( $( '#answer_antiguedad' ).val() = ''){
+      $( '#antiguedad-group').addClass('has-error');
+    }
+    else if ( $( '#answer_escolaridad' ).val() = ''){
+      $( '#escolaridad-group').addClass('has-error');
+    }
+    else if ( $( '#answer_genero' ).val() = ''){
+      $( '#genero-group').addClass('has-error');
+    }
+    else if ( $( '#answer_edad' ).val() = ''){
+      $( '#edad-group').addClass('has-error');
+    }
+    else {
       $( '#welcome' ).hide();
       $( '#values' ).show();
     }
+
   });
 
   $( '#values-next' ).click(function( event ) {
@@ -104,19 +133,9 @@ $( document ).ready(function() {
 
     if ( validAttributes( $( '.company-attribute' ) ) ) {
       $( '#company' ).hide();
-      // $( '#action' ).show();
       $( '#work-ideal' ).show();
     }
   });
-
-  // $( '#action-next' ).click(function( event ) {
-    //   event.preventDefault();
-
-    //   if ( validAttributes( $( '.action-attribute' ) ) ) {
-    //     $( '#action' ).hide();
-    //     $( '#work-ideal' ).show();
-    //   }
-  // });
 
   $( '#work-ideal-next' ).click(function( event ) {
     event.preventDefault();
@@ -133,10 +152,8 @@ $( document ).ready(function() {
     event.preventDefault()
 
     if ( validAttributes( $( '.work-attribute' ) ) ) {
-      // setWorkSelect();
       $( '#work' ).hide();
       $( '#work_improvement' ).show();
-      // $('.work_improvement-attribute').children('input').slider();
     }
   });
 
@@ -146,7 +163,6 @@ $( document ).ready(function() {
     if ( validAttributes( $( '.work_improvement-attribute' ) ) ) {
       $( '#work_improvement' ).hide();
       $( '#score_boss' ).show();
-      // $( '#feeling' ).show();
       $('.work_improvement-attribute').children('input').slider();
     }
   });

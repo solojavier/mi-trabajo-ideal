@@ -26,7 +26,7 @@
         <%= f.select :departamento, options_for_select(t("departamentos").invert), {}, class: "form-control" %>
       </div>
       <div id="antiguedad-group" class="form-group">
-        <%= f.number_field :antiguedad, class: 'form-control', in: 0..50,  :placeholder => "Antigüedad en la empresa (0 o más) " %> <!-- falta en la base -->
+        <%= f.number_field :antiguedad, class: 'form-control', in: 0..50,  :placeholder => "Antigüedad en la empresa (0 o más) " %> 
       </div>
       <div id="escolaridad-group" class="form-group">
         <%= f.select :escolaridad, options_for_select(t("escolaridad").invert), {}, class: "form-control" %>
@@ -35,7 +35,7 @@
         <%= f.select :genero, options_for_select(t("genero").invert), {}, class: "form-control" %>
       </div>
       <div id="edad-group" class="form-group">
-        <%= f.number_field :edad, class: 'form-control', in: 17..100, :placeholder => "Edad" %> <!-- falta en la base -->
+        <%= f.number_field :edad, class: 'form-control', in: 17..100, :placeholder => "Edad" %> 
       </div>
       <div class="from-group">
         <%= button_tag 'Entrar', id: 'welcome-next', class: 'form-control' %>
@@ -53,7 +53,6 @@
         <% end %>
       </div>
       <div class="from-group values-attribute">
-        <!--%= f.label :values_description %-->
         <%= f.text_field :values_description, class: 'form-control', :placeholder => "¿Por que?" %>
       </div>
       <div class="from-group">
@@ -163,8 +162,6 @@
 
     </div>
   </div>
-
-
 
   <div id="score_boss" class="panel panel-primary">
     <div class="panel-heading"><%= t('score_boss') %></div>
@@ -460,9 +457,6 @@
     </div>
   </div>
 
-
-
-
   <div id="feeling" class="panel panel-primary">
     <div class="panel-heading"><%= t('current_feeling') %></div>
     <div class="panel-body">
@@ -477,10 +471,8 @@
     </div>
   </div>
 
-
-
   <div id="current_feeling_2" class="panel panel-primary">
-    <div class="panel-heading"><%= t('current_feeling') %></div>
+    <div class="panel-heading"><%= t('current_feeling_2') %></div>
     <div class="panel-body">
       <div class="form-group rank-attribute">
         <div style="width: 27.5%!important; height: 10px; float: left;"> </div>
@@ -492,8 +484,6 @@
       </div>
     </div>
   </div>
-
-
 
   <div id="responsible" class="panel panel-primary">
     <div class="panel-heading"><%= t('responsible') %></div>

@@ -1,7 +1,4 @@
 en:
-  # ---------------------------------------
-  # modification November 2016 by @tavorazo
-  # ---------------------------------------
   welcome: Bienvenido
   values: ¿Con cuál de los 3 valores de Afosa te identificas más?
   departamentos:
@@ -33,18 +30,15 @@ en:
     masculino: "Hombre"
     femenino: "Mujer"
   company_attributes: ¿Qué es lo que más valoras de Afosa?
-  # action_taken: ¿Qué has hecho desde la última aplicación de la encuesta para hacer de Afosa tu trabajo Ideal?
-  # action_taken_sub: Cuéntanos una acción que realizaste
+
   work_ideal: ¿Si pudieras mejorar 5 aspectos de Afosa, cuáles serían? 
   work_attributes: ¿Actualmente cómo se encuentran estos aspectos en Afosa? 
-  # work_attribute_selected: ¿Qué harías tú para mejorar estos aspectos?
   work_improvement: ¿Qué harías tú para mejorar estos aspectos?
-  # commitment: "En concreto... ¿A qué acción te comprometes contigo para mejorar este aspecto: %{attribute}?"
-  # commitment_note: Te comprometiste contigo a
   
   score_boss: ¿Cómo calificas el reconocimiento que te brinda tu jefe?
   score_company: ¿Cómo calificas el reconocimiento por parte de tus compañeros de trabajo y demás áreas de la empresa?
   rank_training: ¿Cómo consideras la capacitación que te brinda la empresa?
+  
   rank_development: Tienes posibilidad de desarrollo en Afosa
   rank_work: El trabajo de todos y cada uno de tus compañeros de trabajo es importante
   rank_team: Te gusta colaborar con tu equipo de trabajo para todas las actividades
