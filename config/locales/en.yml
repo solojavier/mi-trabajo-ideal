@@ -1,25 +1,75 @@
 en:
-  company_attributes: ¿Qué es lo que más valoras de Afosa?
-  action_taken: ¿Qué has hecho desde la última aplicación de la encuesta para hacer de Afosa tu trabajo Ideal?
-  action_taken_sub: Cuéntanos una acción que realizaste
-  work_ideal: Las 5 características de mi trabajo ideal
-  work_attributes: ¿Qué tanto cumple %{company} con estas características?
-  work_attribute_selected: Ahora... Selecciona el aspecto que te comprometes a mejorar
-  commitment: "En concreto... ¿A qué acción te comprometes contigo para mejorar este aspecto: %{attribute}?"
-  submit: Enviar
   welcome: Bienvenido
-  values: ¿Con cuál de los 4 valores de Afosa te identificas más?
+  values: ¿Con cuál de los 3 valores de Afosa te identificas más?
+  departamentos:
+    option0: "-- Escoje tu departamento --" 
+    tienda: "Tiendas" 
+    sistemas: "Sistemas"
+    proyectos: "Proyectos"
+    direccion_gral: "Dirección General"
+    finanzas: "Finanzas" 
+    r_humanos: "Recursos Humanos"
+    direccion_admin: "Dirección Administración y Finanzas"
+    admin_riesgos: "Administración de Riesgos y Control"
+    direccion_operaciones: "Dirección de Operaciones"
+    almacen: "Almacén"
+    compras: "Compras"
+    direccion_comercial: "Dirección comercial"
+    ventas: "Ventas"
+    certificacion: "Certificación"
+    mercadotecnoa: "Mercadotecnia"
+  escolaridad: 
+    option0: "-- Escolaridad --" 
+    primaria: "Primaria"
+    secundaria: "Secundaria"
+    prepa: "Preparatoria" 
+    lic: "Licenciatura"
+    maestria: "Maestría"
+  genero: 
+    option0: "-- Seleccione su genero --" 
+    masculino: "Hombre"
+    femenino: "Mujer"
+  company_attributes: ¿Qué es lo que más valoras de Afosa?
+
+  work_ideal: ¿Si pudieras mejorar 5 aspectos de Afosa, cuáles serían? 
+  work_attributes: ¿Actualmente cómo se encuentran estos aspectos en Afosa? 
+  work_improvement: ¿Qué harías tú para mejorar estos aspectos?
+  
+  score_boss: ¿Cómo calificas el reconocimiento que te brinda tu jefe?
+  score_company: ¿Cómo calificas el reconocimiento por parte de tus compañeros de trabajo y demás áreas de la empresa?
+  rank_training: ¿Cómo consideras la capacitación que te brinda la empresa?
+  
+  rank_development: Tienes posibilidad de desarrollo en Afosa
+  rank_work: El trabajo de todos y cada uno de tus compañeros de trabajo es importante
+  rank_team: Te gusta colaborar con tu equipo de trabajo para todas las actividades
+  rank_information: Recibes adecuadamente y en tiempo la información general de la empresa
+  rank_voice: Tienes la libertad de expresar lo que piensas frente a tus compañeros de trabajo y jefe inmediato
+  rank_voice_boss: Tienes la posibilidad de comunicarte con las personas que ocupan puestos gerenciales y directivos
+  rank_know: Conoces tus objetivos y sabes qué resultados se esperan de ti
+  rank_comunication: ¿Cómo consideras la comunicación general en Afosa?
+  rank_security: La empresa mantiene un ambiente seguro para que tu trabajes
+  rank_security_2: Realizas con seguridad tus actividades diarias
+  rank_expectations: Afosa es una empresa que cumple con tus expectativas personales
+  rank_expectations_2: Afosa es una empresa que cumple con tus expectativas laborales y/o profesionales
+  rank_culture: Te sientes identificado con la cultura de Afosa
+  rank_boss: La forma de dirigir de tu jefe inmediato es la correcta
+  rank_boss_2: Tu jefe inmediato sabe delegar tareas para cada uno de los miembros de su equipo de trabajo
+  rank_respect: Soy tratado con respeto por mi jefe inmediato
+  rank_happywork: Te sientes feliz con la labor que realizas
+  rank_happywork_2: Afosa me parece un lugar muy agradable para trabajar, me gustan sus instalaciones
+  current_feeling: En general en Afosa te sientes
+  current_feeling_2: Consideras que Afosa es tu trabajo ideal
+
+  submit: Enviar
   thanks: Agradecemos tu tiempo y disposición para contestar esta encuesta
   footer: Juntos hacemos de Afosa nuestro trabajo ideal
-  commitment_note: Te comprometiste contigo a
+  
   result: ¿Te dio resultado?
-  current_feeling: ¿Cómo te sientes en Afosa?
   responsible: ¿Estas de acuerdo que tu eres responsable de crear tu trabajo ideal?
   values_array:
     - Honestidad
     - Profesionalismo
     - Respeto
-    - Confianza
   activerecord:
     attributes:
       answer:
@@ -32,7 +82,6 @@ en:
         values_description: ¿Por qué?
   date:
     month_names:
-      -
       - Enero
       - Febrero
       - Marzo
@@ -45,3 +94,5 @@ en:
       - Octubre
       - Noviembre
       - Diciembre
+
+
