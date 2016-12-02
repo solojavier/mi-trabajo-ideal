@@ -12,8 +12,8 @@
   <table class="table-striped">
     <thead>
       <tr>
-        <th class="th" style="padding-top:40px; background:#fff;">Username</th>
-        <th class="tab" style="padding-top:40px;">Dpto</th>
+        <!-- <th class="th" style="padding-top:40px; background:#fff;">Username</th> -->
+        <th>Dpto</th>
         <th>Antiguedad</th>
         <th>Escolaridad</th>
         <th>Genero</th>
@@ -73,8 +73,8 @@
     <tbody>
       <% @answers.each do |answer| %>
         <tr>
-          <td class="th"><%= answer.username %></td>
-          <td class="tab"><%= answer.departamento %></td>
+          <!-- <td class="th"> Anónimo</td> -->
+          <td><%= answer.departamento %></td>
           <td><%= answer.antiguedad %> años </td>
           <td><%= answer.escolaridad %></td>
           <td><%= answer.genero %></td>

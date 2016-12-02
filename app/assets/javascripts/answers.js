@@ -91,25 +91,19 @@ $( document ).ready(function() {
   $( '#welcome-next' ).click(function( event ) {
     event.preventDefault();
 
-    if ( $( '#answer_username' ).val() == '' ) {
-      $( '#username-group' ).addClass('has-error');
-    }
-    else if ( $( '#answer_username' ).val() == '' ) {
-      $( '#username-group' ).addClass('has-error');
-    }
-    else if ( $( '#answer_departamento' ).val() = ''){
+    if ( $( '#answer_departamento' ).val() == 'option0'){
       $( '#departamento-group').addClass('has-error');
     }
-    else if ( $( '#answer_antiguedad' ).val() = ''){
+    else if ( $( '#answer_antiguedad' ).val() == ''){
       $( '#antiguedad-group').addClass('has-error');
     }
-    else if ( $( '#answer_escolaridad' ).val() = ''){
+    else if ( $( '#answer_escolaridad' ).val() == 'option0'){
       $( '#escolaridad-group').addClass('has-error');
     }
-    else if ( $( '#answer_genero' ).val() = ''){
+    else if ( $( '#answer_genero' ).val() == 'option0'){
       $( '#genero-group').addClass('has-error');
     }
-    else if ( $( '#answer_edad' ).val() = ''){
+    else if ( $( '#answer_edad' ).val() == ''){
       $( '#edad-group').addClass('has-error');
     }
     else {
