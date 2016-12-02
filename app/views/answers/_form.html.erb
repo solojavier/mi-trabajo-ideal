@@ -19,9 +19,9 @@
     <div class="panel-body" id="welcome-body">
       <%= image_tag("logotipo.png", class: 'logo') %>
       <br><br>
-      <div id="username-group" class="form-group">
-        <%= f.text_field :username, class: 'form-control', :placeholder => "Nombre completo" %>
-      </div>
+      <!-- <div id="username-group" class="form-group">
+         f.text_field :username, class: 'form-control', :placeholder => "Nombre completo" 
+      </div> -->
       <div id="departamento-group" class="form-group">
         <%= f.select :departamento, options_for_select(t("departamentos").invert), {}, class: "form-control" %>
       </div>
